@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { Star, Quote } from 'lucide-react'
 import { FadeInOnScroll, StaggerFadeIn } from '@/components/animations/FadeInOnScroll'
 import { testimonials } from '@/lib/demo-content'
@@ -18,7 +19,7 @@ export function TestimonialsSection() {
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             Hear from patients who have experienced the exceptional care and 
-            transformative results provided by Dr. Vance.
+            transformative results at our clinic.
           </p>
         </FadeInOnScroll>
 
@@ -53,10 +54,14 @@ export function TestimonialsSection() {
               {/* Author */}
               <div className="border-t border-border pt-4 mt-auto">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-gold/20 flex items-center justify-center">
-                    <span className="text-gold text-sm font-medium">
-                      {testimonial.name.charAt(0)}
-                    </span>
+                  <div className="w-10 h-10 rounded-full overflow-hidden bg-gold/20 flex items-center justify-center relative">
+                    <Image
+                      src={testimonial.avatar}
+                      alt={testimonial.name}
+                      fill
+                      className="object-cover"
+                      sizes="40px"
+                    />
                   </div>
                   <div>
                     <p className="text-foreground text-sm font-medium">

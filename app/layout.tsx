@@ -18,15 +18,15 @@ const montserrat = Montserrat({
 })
 
 export const metadata: Metadata = {
-  title: 'Dr. Alexander Vance | Premium Plastic Surgery London',
-  description: 'Expert cosmetic surgery in London. Rhinoplasty, facelift, breast augmentation by Dr. Alexander Vance. Book your private consultation today.',
-  keywords: ['plastic surgeon London', 'cosmetic surgery UK', 'rhinoplasty specialist London', 'facelift surgery London', 'breast augmentation UK'],
-  authors: [{ name: 'Dr. Alexander Vance' }],
+  title: 'Aesthetic Surgery | Premium Plastic Surgery',
+  description: 'Expert cosmetic surgery. Rhinoplasty, facelift, breast augmentation by board-certified surgeons. Book your private consultation today.',
+  keywords: ['plastic surgeon', 'cosmetic surgery', 'rhinoplasty specialist', 'facelift surgery', 'breast augmentation'],
+  authors: [{ name: 'Aesthetic Surgery' }],
   openGraph: {
-    title: 'Dr. Alexander Vance | Premium Plastic Surgery London',
-    description: 'Expert cosmetic surgery in London. Rhinoplasty, facelift, breast augmentation by Dr. Alexander Vance.',
+    title: 'Aesthetic Surgery | Premium Plastic Surgery',
+    description: 'Expert cosmetic surgery. Rhinoplasty, facelift, breast augmentation by board-certified surgeons.',
     type: 'website',
-    locale: 'en_GB',
+    locale: 'en_US',
   },
   robots: {
     index: true,
@@ -47,18 +47,18 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               '@context': 'https://schema.org',
-              '@type': 'Physician',
-              name: 'Dr. Alexander Vance',
+              '@type': 'MedicalBusiness',
+              name: 'Aesthetic Surgery',
               specialty: 'Plastic Surgery',
-              description: 'Premium plastic surgery and cosmetic procedures in London',
+              description: 'Premium plastic surgery and cosmetic procedures',
               address: {
                 '@type': 'PostalAddress',
-                streetAddress: '123 Harley Street',
-                addressLocality: 'London',
-                postalCode: 'W1G 7JU',
-                addressCountry: 'UK',
+                streetAddress: '123 Medical District, Suite 100',
+                addressLocality: 'Your City',
+                postalCode: '00000',
+                addressCountry: 'US',
               },
-              telephone: '+44 20 7123 4567',
+              telephone: '+1 (555) 123-4567',
               priceRange: '$$$$',
             }),
           }}

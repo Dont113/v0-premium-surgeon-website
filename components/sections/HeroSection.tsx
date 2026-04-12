@@ -2,7 +2,6 @@
 
 import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
-import { ChevronDown } from 'lucide-react'
 import { heroContent } from '@/lib/demo-content'
 
 interface HeroSectionProps {
@@ -15,7 +14,7 @@ export function HeroSection({ onOpenModal }: HeroSectionProps) {
   const subheadlineRef = useRef<HTMLParagraphElement>(null)
   const taglineRef = useRef<HTMLParagraphElement>(null)
   const ctaRef = useRef<HTMLButtonElement>(null)
-  const scrollIndicatorRef = useRef<HTMLDivElement>(null)
+  const particlesRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
@@ -29,47 +28,72 @@ export function HeroSection({ onOpenModal }: HeroSectionProps) {
       opacity: 0,
       y: 30,
     })
-    gsap.set(scrollIndicatorRef.current, { opacity: 0 })
 
     // Staggered animation
     tl.to(headlineRef.current, { opacity: 1, y: 0, duration: 0.8 }, 0.3)
       .to(subheadlineRef.current, { opacity: 1, y: 0, duration: 0.6 }, 0.6)
       .to(taglineRef.current, { opacity: 1, y: 0, duration: 0.6 }, 0.9)
       .to(ctaRef.current, { opacity: 1, y: 0, duration: 0.5 }, 1.2)
-      .to(scrollIndicatorRef.current, { opacity: 1, duration: 0.5 }, 1.5)
 
-    // Floating scroll indicator animation
-    gsap.to(scrollIndicatorRef.current, {
-      y: 10,
-      duration: 1.2,
-      repeat: -1,
-      yoyo: true,
-      ease: 'power1.inOut',
-    })
+    // Animate floating particles
+    if (particlesRef.current) {
+      const particles = particlesRef.current.querySelectorAll('.particle')
+      particles.forEach((particle, index) => {
+        gsap.to(particle, {
+          y: -20 + Math.random() * 40,
+          x: -10 + Math.random() * 20,
+          duration: 3 + Math.random() * 2,
+          repeat: -1,
+          yoyo: true,
+          ease: 'sine.inOut',
+          delay: index * 0.2,
+        })
+      })
+    }
 
     return () => {
       tl.kill()
     }
   }, [])
 
-  const scrollToNext = () => {
-    const aboutSection = document.querySelector('#about')
-    if (aboutSection) {
-      aboutSection.scrollIntoView({ behavior: 'smooth' })
-    }
-  }
-
   return (
     <section
       ref={heroRef}
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Background with overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-secondary/20" />
-      
-      {/* Subtle decorative element */}
-      <div className="absolute top-1/4 right-0 w-96 h-96 bg-accent-gold/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 left-0 w-64 h-64 bg-accent-gold/3 rounded-full blur-3xl" />
+      {/* Dynamic Animated Background */}
+      <div className="absolute inset-0 bg-background">
+        {/* Gradient mesh */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-gold/8 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-gold/5 via-transparent to-transparent" />
+        
+        {/* Animated grid lines */}
+        <div className="absolute inset-0 opacity-[0.03]">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `linear-gradient(to right, var(--color-gold) 1px, transparent 1px),
+                             linear-gradient(to bottom, var(--color-gold) 1px, transparent 1px)`,
+            backgroundSize: '80px 80px',
+          }} />
+        </div>
+
+        {/* Floating particles */}
+        <div ref={particlesRef} className="absolute inset-0 overflow-hidden">
+          {[...Array(8)].map((_, i) => (
+            <div
+              key={i}
+              className="particle absolute w-1 h-1 rounded-full bg-gold/20"
+              style={{
+                left: `${10 + i * 12}%`,
+                top: `${20 + (i % 3) * 25}%`,
+              }}
+            />
+          ))}
+        </div>
+
+        {/* Soft glow orbs */}
+        <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-gold/[0.03] rounded-full blur-[100px] animate-pulse" style={{ animationDuration: '8s' }} />
+        <div className="absolute bottom-1/3 left-1/4 w-[400px] h-[400px] bg-gold/[0.02] rounded-full blur-[80px] animate-pulse" style={{ animationDuration: '10s', animationDelay: '2s' }} />
+      </div>
 
       {/* Content */}
       <div className="relative z-10 container-wide mx-auto px-4 md:px-8 text-center">
@@ -106,18 +130,6 @@ export function HeroSection({ onOpenModal }: HeroSectionProps) {
           >
             {heroContent.cta}
           </button>
-        </div>
-      </div>
-
-      {/* Scroll Indicator */}
-      <div
-        ref={scrollIndicatorRef}
-        onClick={scrollToNext}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 cursor-pointer text-muted-foreground hover:text-gold transition-colors"
-      >
-        <div className="flex flex-col items-center gap-2">
-          <span className="text-xs uppercase tracking-widest">Scroll</span>
-          <ChevronDown size={24} />
         </div>
       </div>
     </section>

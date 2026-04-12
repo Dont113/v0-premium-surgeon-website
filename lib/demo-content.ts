@@ -1,15 +1,15 @@
-// Demo Content for Dr. Vance Premium Plastic Surgery Website
+// Demo Content for Premium Plastic Surgery Website Prototype
 // All content is placeholder and should be replaced with real data
 
 export const siteConfig = {
-  name: 'Dr. Alexander Vance',
+  name: 'Aesthetic Surgery',
   title: 'Premium Plastic Surgery',
   tagline: 'Where Art Meets Precision',
-  location: 'London, UK',
-  address: '123 Harley Street, London W1G 7JU',
-  phone: '+44 20 7123 4567',
-  email: 'consultations@drvance.co.uk',
-  consultationFee: '£150',
+  location: 'Your City',
+  address: '123 Medical District, Suite 100',
+  phone: '+1 (555) 123-4567',
+  email: 'consultations@example.com',
+  consultationFee: '$250',
   consultationNote: 'Redeemable against any procedure',
 }
 
@@ -24,8 +24,8 @@ export const navigation = [
 ]
 
 export const heroContent = {
-  headline: 'Dr. Alexander Vance',
-  subheadline: 'Premium Plastic Surgery in London',
+  headline: 'Redefine Your Beauty',
+  subheadline: 'Premium Aesthetic Surgery',
   tagline: 'Where art meets precision. Transforming lives through expert cosmetic surgery with natural, refined results.',
   cta: 'Book Private Consultation',
 }
@@ -33,14 +33,14 @@ export const heroContent = {
 export const aboutContent = {
   headline: 'Expertise You Can Trust',
   bio: [
-    'Dr. Alexander Vance is a board-certified plastic surgeon with over 15 years of experience in aesthetic and reconstructive surgery. Trained at some of the world\'s most prestigious medical institutions, he brings a unique combination of surgical precision and artistic vision to every procedure.',
-    'His philosophy centres on understanding each patient\'s individual goals and creating natural-looking results that enhance their unique beauty. Dr. Vance is known for his meticulous attention to detail and commitment to patient safety.',
-    'Based on Harley Street in the heart of London, Dr. Vance serves patients from across the UK and internationally, providing a discreet, personalised experience from consultation through recovery.',
+    'Our board-certified plastic surgeons bring over 15 years of experience in aesthetic and reconstructive surgery. Trained at some of the world\'s most prestigious medical institutions, they bring a unique combination of surgical precision and artistic vision to every procedure.',
+    'Our philosophy centres on understanding each patient\'s individual goals and creating natural-looking results that enhance their unique beauty. We are known for meticulous attention to detail and commitment to patient safety.',
+    'Our clinic serves patients from across the region and internationally, providing a discreet, personalised experience from consultation through recovery.',
   ],
   highlights: [
     '15+ years of surgical experience',
     'Over 3,000 successful procedures',
-    'Internationally trained specialist',
+    'Internationally trained specialists',
     'Personalised approach to every patient',
   ],
 }
@@ -113,28 +113,32 @@ export const testimonials = [
     name: 'Sarah M.',
     procedure: 'Rhinoplasty',
     rating: 5,
-    text: 'Dr. Vance exceeded all my expectations. From the first consultation to my final follow-up, I felt completely at ease. The results are so natural that even my closest friends can\'t tell I\'ve had work done.',
+    text: 'The team exceeded all my expectations. From the first consultation to my final follow-up, I felt completely at ease. The results are so natural that even my closest friends can\'t tell I\'ve had work done.',
+    avatar: '/images/avatar-1.jpg',
   },
   {
     id: 2,
     name: 'James T.',
     procedure: 'Facelift',
     rating: 5,
-    text: 'After years of considering surgery, I finally took the step with Dr. Vance. His expertise and artistic eye gave me results that look refreshed, not overdone. I look like myself, just ten years younger.',
+    text: 'After years of considering surgery, I finally took the step. The expertise and artistic eye gave me results that look refreshed, not overdone. I look like myself, just ten years younger.',
+    avatar: '/images/avatar-2.jpg',
   },
   {
     id: 3,
     name: 'Emma L.',
     procedure: 'Breast Augmentation',
     rating: 5,
-    text: 'The entire experience was first-class. Dr. Vance listened to exactly what I wanted and delivered results that look completely natural. The aftercare was exceptional.',
+    text: 'The entire experience was first-class. The surgeon listened to exactly what I wanted and delivered results that look completely natural. The aftercare was exceptional.',
+    avatar: '/images/avatar-3.jpg',
   },
   {
     id: 4,
     name: 'Michael R.',
     procedure: 'Liposuction',
     rating: 5,
-    text: 'I had been struggling with stubborn fat for years despite diet and exercise. Dr. Vance\'s work has completely transformed my confidence. Professional, discreet, and outstanding results.',
+    text: 'I had been struggling with stubborn fat for years despite diet and exercise. This procedure has completely transformed my confidence. Professional, discreet, and outstanding results.',
+    avatar: '/images/avatar-4.jpg',
   },
 ]
 
@@ -163,67 +167,50 @@ export const processSteps = [
 
 export const pricingData = [
   {
-    id: 'consultation',
-    name: 'Private Consultation',
-    price: '£150',
-    note: 'Redeemable against any procedure',
-    features: [
-      'One-on-one with Dr. Vance',
-      'Detailed assessment',
-      'Visual simulations',
-      'Personalised recommendations',
-    ],
-    highlighted: false,
-  },
-  {
     id: 'rhinoplasty',
     name: 'Rhinoplasty',
-    price: '£5,500 - £8,000',
-    note: 'Final price confirmed at consultation',
+    price: '$5,500 - $8,000',
+    note: 'Final price at consultation',
     features: [
-      'Comprehensive pre-op assessment',
+      'Comprehensive assessment',
       'Surgery and anaesthesia',
-      'Overnight stay if required',
-      '12 months follow-up care',
+      '12 months follow-up',
     ],
     highlighted: true,
   },
   {
     id: 'facelift',
     name: 'Facelift',
-    price: '£8,000 - £12,000',
-    note: 'Final price confirmed at consultation',
+    price: '$8,000 - $12,000',
+    note: 'Final price at consultation',
     features: [
       'Full facial analysis',
-      'Advanced surgical techniques',
-      'Overnight stay included',
-      '12 months follow-up care',
+      'Advanced techniques',
+      '12 months follow-up',
     ],
     highlighted: false,
   },
   {
     id: 'breast-augmentation',
     name: 'Breast Augmentation',
-    price: '£6,000 - £9,000',
+    price: '$6,000 - $9,000',
     note: 'Includes premium implants',
     features: [
       '3D imaging consultation',
-      'Premium implant selection',
-      'Overnight stay included',
-      '12 months follow-up care',
+      'Premium implants',
+      '12 months follow-up',
     ],
     highlighted: false,
   },
   {
     id: 'liposuction',
     name: 'Liposuction',
-    price: '£3,500 - £6,000',
+    price: '$3,500 - $6,000',
     note: 'Per treatment area',
     features: [
-      'Body contouring assessment',
-      'Advanced technique',
+      'Body contouring',
       'Compression garments',
-      '12 months follow-up care',
+      '12 months follow-up',
     ],
     highlighted: false,
   },
@@ -232,27 +219,27 @@ export const pricingData = [
 export const faqs = [
   {
     question: 'What happens during the initial consultation?',
-    answer: 'Your consultation is a private, unhurried appointment where Dr. Vance will discuss your goals, examine the area of concern, explain your options, and answer any questions. You\'ll receive a detailed treatment plan and quote with no obligation.',
+    answer: 'Your consultation is a private appointment to discuss your goals, assess suitability, and answer questions. You\'ll receive a detailed plan with no obligation.',
   },
   {
     question: 'How long is the recovery period?',
-    answer: 'Recovery varies by procedure. Most patients return to light activities within 1-2 weeks. Full recovery typically takes 4-6 weeks, though you\'ll see progressive improvements over several months. Dr. Vance provides detailed aftercare guidance.',
+    answer: 'Recovery varies by procedure. Most patients return to light activities within 1-2 weeks. Full recovery takes 4-6 weeks with progressive improvements.',
   },
   {
     question: 'What results can I expect?',
-    answer: 'Dr. Vance specialises in natural-looking results that enhance your features without appearing overdone. During consultation, he\'ll show you visual simulations so you can see potential outcomes before making any decisions.',
+    answer: 'We specialise in natural-looking results that enhance your features. During consultation, you\'ll see visual simulations of potential outcomes.',
   },
   {
     question: 'Is the procedure safe?',
-    answer: 'Patient safety is our absolute priority. All procedures are performed in accredited facilities with full surgical teams. Dr. Vance\'s extensive training and experience, combined with rigorous safety protocols, minimise any risks.',
+    answer: 'Patient safety is our priority. All procedures are performed in accredited facilities with full surgical teams and rigorous safety protocols.',
   },
   {
     question: 'Do you offer financing options?',
-    answer: 'Yes, we offer flexible payment plans through our finance partners. This allows you to spread the cost over 12-60 months with competitive interest rates. Details are provided during your consultation.',
+    answer: 'Yes, we offer flexible payment plans allowing you to spread the cost over 12-60 months with competitive interest rates.',
   },
   {
     question: 'How do I schedule my appointment?',
-    answer: 'Simply click the "Book Private Consultation" button or contact our team directly. We\'ll arrange a convenient time for your consultation at our Harley Street clinic. Virtual consultations are also available.',
+    answer: 'Simply click "Book Private Consultation" or contact our team. We\'ll arrange a convenient time. Virtual consultations are also available.',
   },
 ]
 
@@ -276,11 +263,11 @@ export const credentials = [
 
 export const footerContent = {
   tagline: 'Exceptional results. Exceptional care.',
-  address: '123 Harley Street, London W1G 7JU',
-  phone: '+44 20 7123 4567',
-  email: 'consultations@drvance.co.uk',
+  address: '123 Medical District, Suite 100',
+  phone: '+1 (555) 123-4567',
+  email: 'consultations@example.com',
   hours: 'Mon - Fri: 9:00 AM - 6:00 PM',
-  copyright: `© ${new Date().getFullYear()} Dr. Alexander Vance. All rights reserved.`,
+  copyright: `© ${new Date().getFullYear()} Aesthetic Surgery. All rights reserved.`,
   links: {
     privacy: '/privacy-policy',
     terms: '/terms-of-service',

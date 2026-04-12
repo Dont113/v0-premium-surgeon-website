@@ -69,7 +69,7 @@ export function BeforeAfterSection() {
             Transformations
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            See the natural, refined results achieved by Dr. Vance&apos;s patients. 
+            See the natural, refined results achieved by our patients. 
             Each transformation is uniquely tailored to enhance individual beauty.
           </p>
         </FadeInOnScroll>

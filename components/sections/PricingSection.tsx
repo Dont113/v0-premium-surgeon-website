@@ -26,8 +26,8 @@ export function PricingSection({ onOpenModal }: PricingSectionProps) {
           </p>
         </FadeInOnScroll>
 
-        {/* Pricing Cards */}
-        <StaggerFadeIn className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+        {/* Pricing Cards - 4 in a row */}
+        <StaggerFadeIn className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {pricingData.map((item) => (
             <div
               key={item.id}
@@ -40,7 +40,7 @@ export function PricingSection({ onOpenModal }: PricingSectionProps) {
               {/* Highlighted Badge */}
               {item.highlighted && (
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                  <span className="bg-gold text-background text-xs font-medium px-3 py-1 rounded-full">
+                  <span className="bg-gold text-background text-xs font-medium px-3 py-1 rounded-full whitespace-nowrap">
                     Most Popular
                   </span>
                 </div>
@@ -52,7 +52,7 @@ export function PricingSection({ onOpenModal }: PricingSectionProps) {
                   {item.name}
                 </h3>
                 <div className="flex items-baseline gap-1">
-                  <span className="text-2xl font-semibold text-foreground">
+                  <span className="text-xl font-semibold text-foreground">
                     {item.price}
                   </span>
                 </div>
@@ -62,7 +62,7 @@ export function PricingSection({ onOpenModal }: PricingSectionProps) {
               </div>
 
               {/* Features */}
-              <ul className="space-y-3 mb-6">
+              <ul className="space-y-2 mb-6">
                 {item.features.map((feature, index) => (
                   <li key={index} className="flex items-start gap-2">
                     <div className="flex-shrink-0 w-4 h-4 rounded-full bg-gold/20 flex items-center justify-center mt-0.5">
