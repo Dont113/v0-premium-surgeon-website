@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
+import Image from 'next/image'
 import { gsap } from 'gsap'
 import { FadeInOnScroll } from '@/components/animations/FadeInOnScroll'
 import { beforeAfterCases } from '@/lib/demo-content'
@@ -89,40 +90,26 @@ export function BeforeAfterSection() {
                   activeIndex === index ? 'ring-2 ring-gold' : ''
                 }`}
               >
-                {/* Before/After Images Container */}
+                {/* Image */}
                 <div className="aspect-[3/4] relative">
-                  {/* Before Image Placeholder */}
-                  <div className="absolute inset-0 flex">
-                    <div className="w-1/2 bg-secondary flex items-center justify-center border-r border-border/50">
-                      <div className="text-center p-2">
-                        <span className="text-xs uppercase tracking-wider text-muted-foreground block mb-1">Before</span>
-                        <div className="w-16 h-16 mx-auto bg-muted rounded-full flex items-center justify-center">
-                          <span className="text-muted-foreground text-xs">Photo</span>
-                        </div>
-                      </div>
-                    </div>
-                    {/* After Image Placeholder */}
-                    <div className="w-1/2 bg-secondary/80 flex items-center justify-center">
-                      <div className="text-center p-2">
-                        <span className="text-xs uppercase tracking-wider text-muted-foreground block mb-1">After</span>
-                        <div className="w-16 h-16 mx-auto bg-muted rounded-full flex items-center justify-center">
-                          <span className="text-muted-foreground text-xs">Photo</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
+                  <Image
+                    src={caseItem.image}
+                    alt={`${caseItem.procedure} result`}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  />
                   {/* Overlay on hover */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300" />
                 </div>
 
                 {/* Info Overlay */}
-                <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-background to-transparent">
+                <div className="absolute bottom-0 left-0 right-0 p-4">
                   <div className="flex items-center justify-between mb-1">
                     <span className="text-gold text-sm font-medium">{caseItem.procedure}</span>
-                    <span className="text-xs text-muted-foreground">Age {caseItem.age}</span>
+                    <span className="text-xs text-foreground/70">Age {caseItem.age}</span>
                   </div>
-                  <p className="text-xs text-muted-foreground">{caseItem.description}</p>
+                  <p className="text-xs text-foreground/80">{caseItem.description}</p>
                 </div>
               </div>
             ))}
