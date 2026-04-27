@@ -48,7 +48,7 @@ export function Header({ onOpenModal }: HeaderProps) {
             }}
             className="flex flex-col"
           >
-            <span className="font-heading text-xl md:text-2xl font-semibold text-foreground">
+            <span className="font-heading text-xl md:text-2xl font-semibold text-gold-gradient">
               {siteConfig.name}
             </span>
             <span className="text-xs text-muted-foreground tracking-widest uppercase">
