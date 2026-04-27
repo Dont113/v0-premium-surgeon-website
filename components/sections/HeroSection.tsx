@@ -101,7 +101,7 @@ export function HeroSection({ onOpenModal }: HeroSectionProps) {
           {/* Headline */}
           <h1
             ref={headlineRef}
-            className="font-heading text-5xl md:text-7xl lg:text-8xl font-semibold text-gold-gradient mb-4 text-balance"
+            className="font-heading text-5xl md:text-7xl lg:text-8xl font-semibold text-foreground mb-4 text-balance"
           >
             {heroContent.headline}
           </h1>
@@ -109,7 +109,7 @@ export function HeroSection({ onOpenModal }: HeroSectionProps) {
           {/* Subheadline */}
           <p
             ref={subheadlineRef}
-            className="text-lg md:text-xl lg:text-2xl text-gold mb-6 tracking-wide"
+            className="text-xl md:text-2xl lg:text-3xl text-gold mb-6 tracking-wide"
           >
             {heroContent.subheadline}
           </p>
