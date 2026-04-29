@@ -126,9 +126,16 @@
   /* Gold gradient text */
   .text-gold-gradient {
     background: linear-gradient(135deg, #C9A961 0%, #E8D5A3 50%, #C9A961 100%);
+    background-size: 200% 200%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    animation: gold-shimmer 3s ease-in-out infinite;
+  }
+
+  @keyframes gold-shimmer {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
   }
 }
 
@@ -244,7 +251,7 @@
   }
   
   .modal-content {
-    @apply fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-card border border-border rounded-lg p-6 md:p-8 z-50 w-[90%] max-w-lg;
+    @apply fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-card border border-border rounded-lg p-5 md:p-6 z-50 w-[90%] max-w-md;
   }
 }
 

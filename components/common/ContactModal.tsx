@@ -110,14 +110,14 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
 
         {isSubmitted ? (
           /* Success State */
-          <div className="text-center py-8">
-            <div className="flex justify-center mb-4">
-              <CheckCircle className="w-16 h-16 text-gold" />
+          <div className="text-center py-6">
+            <div className="flex justify-center mb-3">
+              <CheckCircle className="w-14 h-14 text-gold" />
             </div>
-            <h3 className="font-heading text-2xl text-foreground mb-4">
+            <h3 className="font-heading text-xl text-foreground mb-3">
               Thank You
             </h3>
-            <p className="text-muted-foreground mb-6">
+            <p className="text-muted-foreground text-sm mb-5">
               {contactForm.successMessage}
             </p>
             <button
@@ -130,24 +130,24 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
         ) : (
           /* Form */
           <>
-            <div className="mb-6">
+            <div className="mb-4">
               <h2
                 id="modal-title"
-                className="font-heading text-2xl md:text-3xl text-foreground mb-2"
+                className="font-heading text-xl md:text-2xl text-foreground mb-1"
               >
                 Book Private Consultation
               </h2>
-              <p className="text-muted-foreground text-sm">
+              <p className="text-muted-foreground text-xs">
                 {siteConfig.consultationFee} consultation fee ({siteConfig.consultationNote.toLowerCase()})
               </p>
             </div>
 
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-3">
               {/* Name */}
               <div>
                 <label
                   htmlFor="name"
-                  className="block text-sm font-medium text-foreground mb-1"
+                  className="block text-sm font-medium text-foreground mb-0.5"
                 >
                   {contactForm.fields.name.label}
                 </label>
@@ -157,7 +157,7 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   placeholder={contactForm.fields.name.placeholder}
-                  className={`w-full px-4 py-3 bg-secondary border rounded-md text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-gold ${
+                  className={`w-full px-3 py-2.5 bg-secondary border rounded-md text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-gold text-sm ${
                     errors.name ? 'border-destructive' : 'border-border'
                   }`}
                 />
@@ -170,7 +170,7 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
               <div>
                 <label
                   htmlFor="email"
-                  className="block text-sm font-medium text-foreground mb-1"
+                  className="block text-sm font-medium text-foreground mb-0.5"
                 >
                   {contactForm.fields.email.label}
                 </label>
@@ -180,7 +180,7 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   placeholder={contactForm.fields.email.placeholder}
-                  className={`w-full px-4 py-3 bg-secondary border rounded-md text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-gold ${
+                  className={`w-full px-3 py-2.5 bg-secondary border rounded-md text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-gold text-sm ${
                     errors.email ? 'border-destructive' : 'border-border'
                   }`}
                 />
@@ -193,7 +193,7 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
               <div>
                 <label
                   htmlFor="phone"
-                  className="block text-sm font-medium text-foreground mb-1"
+                  className="block text-sm font-medium text-foreground mb-0.5"
                 >
                   {contactForm.fields.phone.label}
                 </label>
@@ -203,7 +203,7 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                   placeholder={contactForm.fields.phone.placeholder}
-                  className={`w-full px-4 py-3 bg-secondary border rounded-md text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-gold ${
+                  className={`w-full px-3 py-2.5 bg-secondary border rounded-md text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-gold text-sm ${
                     errors.phone ? 'border-destructive' : 'border-border'
                   }`}
                 />
@@ -216,7 +216,7 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
               <div>
                 <label
                   htmlFor="message"
-                  className="block text-sm font-medium text-foreground mb-1"
+                  className="block text-sm font-medium text-foreground mb-0.5"
                 >
                   {contactForm.fields.message.label}
                 </label>
@@ -226,7 +226,7 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   placeholder={contactForm.fields.message.placeholder}
-                  className="w-full px-4 py-3 bg-secondary border border-border rounded-md text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-gold resize-none"
+                  className="w-full px-3 py-2.5 bg-secondary border border-border rounded-md text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-gold resize-none text-sm"
                 />
               </div>
 
@@ -253,7 +253,7 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
               {/* Submit */}
               <button
                 type="submit"
-                className="w-full btn-gold py-4 text-base font-medium"
+                className="w-full btn-gold py-3 text-sm font-medium"
               >
                 {contactForm.submitText}
               </button>
