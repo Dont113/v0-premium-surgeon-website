@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { X, CheckCircle } from 'lucide-react'
+import { X, CircleCheck as CheckCircle } from 'lucide-react'
 import { contactForm, siteConfig } from '@/lib/demo-content'
 
 interface ContactModalProps {
